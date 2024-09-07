@@ -3,8 +3,8 @@ import React from 'react'
 const App = () => {
   return (
     <>
-      <div>
-        <p className=''>Hola mundo</p>
+      <div className='d-flex justify-content-center'>
+        <i class="fa-regular fa-clock"></i>
       </div>
     </>
   );
