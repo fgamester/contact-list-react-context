@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 const NewContact = () => {
     return (
@@ -20,7 +21,8 @@ const NewContact = () => {
                     <label className="form-label" htmlFor="adressInput">Adress</label>
                     <input type="text" className="form-control" id="adressInput" placeholder="Enter adress"/>
                 </div>
-                <button type="submit" className="btn btn-primary">save</button>
+                <button type="submit" className="btn btn-primary col-12">save</button>
+                <a href="#">or get back to contacts</a>
             </form>
         </div>
     );
