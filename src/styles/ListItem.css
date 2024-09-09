@@ -1,6 +1,6 @@
 .btn-light {
-    background-color: white !important;
-    border-color: white !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
 }
 
 .btn-light:hover {
