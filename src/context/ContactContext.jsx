@@ -2,10 +2,10 @@ import React, { createContext, useState } from "react";
 
 export const Context = createContext(null);
 
-const ContactContext = ({ children }) => {
+export const AppContext = ({ children }) => {
 
-    const [contactList, setContactList] = useState([
-        {
+    const [store, setStore] = useState({
+        contacts: [{
             name: 'Mike Anamendolla',
             phone: '(870) 288-4149',
             email: 'mike.ana@example.com',
@@ -25,14 +25,20 @@ const ContactContext = ({ children }) => {
             email: 'mike.ana@example.com',
             address: '5842 Hillcrest Rd',
             id: 3
-        }
-    ]);
+        }]
+    });
+    const [actions, setActions] = useState({
+        addContact: item => {
+            setStore(() => store.contacts.concat(item));
+        },
+        deleteContact: item => {
+            setStore({})
+        },
+    });
 
     return (
-        <Context.Provider value={{ contactList }}>
+        <Context.Provider value={{ store, actions }}>
             {children}
         </Context.Provider>
     );
 };
-
-export default ContactContext;

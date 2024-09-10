@@ -2,11 +2,11 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NewContact from "../views/NewContact.jsx";
 import ContactList from "../views/ContactList.jsx";
-import ContactContext from "../context/ContactContext.jsx";
+import { AppContext } from "../context/ContactContext.jsx";
 
 const Layout = () => {
     return (
-        <ContactContext>
+        <AppContext>
             <BrowserRouter>
                 <Routes>
                     <Route path='*' element={'Not Found 404'} />
@@ -14,7 +14,7 @@ const Layout = () => {
                     <Route path='/newcontact' element={<NewContact />} />
                 </Routes>
             </BrowserRouter>
-        </ContactContext>
+        </AppContext>
     );
 }
 

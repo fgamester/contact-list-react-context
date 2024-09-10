@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import ListItem from "../components/ListItem";
+import { Context } from "../context/ContactContext";
 
 const ContactList = () => {
-    const [contacts, setContacts] = useState([
+    /* const [contacts, setContacts] = useState([
         {
             name: 'Mike Anamendolla',
             phone: '(870) 288-4149',
@@ -26,6 +27,8 @@ const ContactList = () => {
             id: 3
         }
     ]);
+    */
+    const context = useContext(Context);
 
     return (
         <div className="d-flex justify-content-center mt-2">
@@ -34,7 +37,7 @@ const ContactList = () => {
                     <Link to='/newcontact' className="btn btn-success">Add new contact</Link>
                 </div>
                 <ul className="list-group  mt-3">
-                    {contacts.map((item, index) => (
+                    {context.store.contacts.map((item, index) => (
                         <ListItem contact={item} key={index} />
                     ))}
                 </ul>
