@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import '../styles/ListItem.css';
+import { Context } from "../context/ContactContext";
 
 const ListItem = ({ contact }) => {
+    const context = useContext(Context);
+
     return (
         <li className="list-group-item">
             <div className="d-flex justify-content-between align-items-center">
@@ -10,7 +13,7 @@ const ListItem = ({ contact }) => {
                     <button className="btn btn-light">
                         <i className="fa-solid fa-pencil mx-1 fs-5" />
                     </button>
-                    <button className="btn btn-light">
+                    <button type="button" onClick={() => context.actions.deleteContact(contact.id)} className="btn btn-light">
                         <i className="fa-solid fa-trash-can mx-1 fs-5" />
                     </button>
                 </div>

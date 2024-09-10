@@ -1,33 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import ListItem from "../components/ListItem";
 import { Context } from "../context/ContactContext";
 
 const ContactList = () => {
-    /* const [contacts, setContacts] = useState([
-        {
-            name: 'Mike Anamendolla',
-            phone: '(870) 288-4149',
-            email: 'mike.ana@example.com',
-            address: '5842 Hillcrest Rd',
-            id: 1
-        },
-        {
-            name: 'Mike Anamendolla',
-            phone: '(870) 288-4149',
-            email: 'mike.ana@example.com',
-            address: '5842 Hillcrest Rd',
-            id: 2
-        },
-        {
-            name: 'Mike Anamendolla',
-            phone: '(870) 288-4149',
-            email: 'mike.ana@example.com',
-            address: '5842 Hillcrest Rd',
-            id: 3
-        }
-    ]);
-    */
     const context = useContext(Context);
 
     return (
@@ -37,7 +13,7 @@ const ContactList = () => {
                     <Link to='/newcontact' className="btn btn-success">Add new contact</Link>
                 </div>
                 <ul className="list-group  mt-3">
-                    {context.store.contacts.map((item, index) => (
+                    {Array.isArray(context.store) && context.store.map((item, index) => (
                         <ListItem contact={item} key={index} />
                     ))}
                 </ul>
