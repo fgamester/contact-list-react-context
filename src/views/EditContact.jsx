@@ -26,7 +26,7 @@ const EditContact = () => {
     return (
         <div className="container-fluid d-flex justify-content-center mt-3">
             <form className="col-12 col-sm-11 col-md-8 col-lg-7 col-xl-6 col-xxl-5" onSubmit={e => handleSubmit(e)}>
-                <h1 className="text-center">Add a new contact</h1>
+                <h1 className="text-center">Update {context.edit.name} contact</h1>
                 <div className="mb-3">
                     <label htmlFor="fullNameInput" className="form-label">Full Name</label>
                     <input type="text" className="form-control" id="fullNameInput" name="fullNameInput"

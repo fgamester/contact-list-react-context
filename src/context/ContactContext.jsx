@@ -5,6 +5,8 @@ export const Context = createContext(null);
 export const AppContext = ({ children }) => {
     const [store, setStore] = useState({});
     const [edit, setEdit] = useState({});
+    const [itemDisplayed, setItemDisplayed] = useState({});
+
     const getStore = () => {
         fetch('https://playground.4geeks.com/contact/agendas/fgamester/contacts')
             .then((resp) => {
@@ -70,7 +72,7 @@ export const AppContext = ({ children }) => {
     });
 
     return (
-        <Context.Provider value={{ store, actions, edit }}>
+        <Context.Provider value={{ store, actions, edit, itemDisplayed }}>
             {children}
         </Context.Provider>
     );
