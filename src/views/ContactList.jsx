@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import ListItem from "../components/ListItem";
-import { Context } from "../context/ContactContext";
+import ListItem from "../components/ListItem.jsx";
+import { Context } from "../context/ContactContext.jsx";
 
 const ContactList = () => {
     const context = useContext(Context);
