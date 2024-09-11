@@ -8,10 +8,10 @@ const ContactCard = () => {
         <div className="card col-12 col-sm-11 col-md-8 col-lg-7 col-xl-6 col-xxl-5" >
             <img src="..." className="card-img-top" alt="Contact Image" />
             <div className="card-body">
-                <p className="card-text m-0"><strong>Name: </strong>Name</p>
-                <p className="card-text m-0"><strong>Adress: </strong>Adres</p>
-                <p className="card-text m-0"><strong>Email: </strong>Email</p>
-                <p className="card-text m-0"><strong>Phone: </strong>Phone</p>
+                <p className="card-text m-0"><strong>Name: </strong>{context.itemDisplayed.name}</p>
+                <p className="card-text m-0"><strong>Address: </strong>{context.itemDisplayed.addres}</p>
+                <p className="card-text m-0"><strong>Email: </strong>{context.itemDisplayed.email}</p>
+                <p className="card-text m-0"><strong>Phone: </strong>{context.itemDisplayed.phone}</p>
             </div>
         </div>
     ) : (
