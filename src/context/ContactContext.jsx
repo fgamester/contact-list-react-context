@@ -51,6 +51,9 @@ export const AppContext = ({ children }) => {
                 .then(() => {
                     getStore();
                 })
+                .then(() => {
+                    setEdit({})
+                })
                 .catch(error => {
                     console.log(error)
                 })

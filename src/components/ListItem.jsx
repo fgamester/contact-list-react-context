@@ -1,16 +1,9 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext } from "react";
 import { Context } from "../context/ContactContext.jsx";
-// import DeleteModal from "./DeleteModal";
 import '../styles/ListItem.css';
 import { useNavigate } from "react-router";
 
 const ListItem = ({ contact }) => {
-    /*     
-        const [show, setShow] = useState(false);
-        const handleClose = () => setShow(false);
-        const handleShow = () => setShow(true);
-     */
-
     const context = useContext(Context);
     const navigate = useNavigate();
 
@@ -46,7 +39,6 @@ const ListItem = ({ contact }) => {
                     {contact.email}
                 </p>
             </li>
-            {/* <DeleteModal show={show} handleClose={handleClose()} /> */}
         </div>
     );
 }
