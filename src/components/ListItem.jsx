@@ -2,25 +2,20 @@ import React, { useContext } from "react";
 import { Context } from "../context/ContactContext.jsx";
 import '../styles/ListItem.css';
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 const ListItem = ({ contact }) => {
     const context = useContext(Context);
-    const navigate = useNavigate();
-
-    const sendToEdit = () => {
-        context.actions.setEditing(contact);
-        navigate('/updatecontact');
-    };
 
     return (
         <div>
             <li className="list-group-item">
                 <div className="d-flex justify-content-between align-items-center">
-                    <p className="m-0 fs-4">{contact.name}</p>
+                    <Link to={`/contact/${contact.id}`} className="m-0 fs-4">{contact.name}</Link>
                     <div className="d-flex">
-                        <button className="btn btn-light" onClick={() => sendToEdit()}>
+                        <Link to={`updatecontact/${contact.id}`} className="btn btn-light">
                             <i className="fa-solid fa-pencil mx-1 fs-5" />
-                        </button>
+                        </Link>
                         <button type="button" className="btn btn-light" onClick={() => context.actions.deleteContact(contact.id)} >
                             <i className="fa-solid fa-trash-can mx-1 fs-5" />
                         </button>

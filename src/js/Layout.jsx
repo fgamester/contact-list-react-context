@@ -12,8 +12,8 @@ const Layout = () => {
                 <Route path='*' element={'Not Found 404'} />
                 <Route path='/' element={<ContactList />} />
                 <Route path='/newcontact' element={<NewContact />} />
-                <Route path="/updatecontact" element={<EditContact />} />
-                <Route path="/contact" element={<ContactCard />} />
+                <Route path="/updatecontact/:contact_id" element={<EditContact />} />
+                <Route path="/contact/:contact_id" element={<ContactCard />} />
             </Routes>
         </BrowserRouter>
     );
