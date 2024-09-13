@@ -36,26 +36,28 @@ const EditContact = () => {
     };
 
     const editBody = Object.keys(contact).length > 0 ? (
-        <form className="text-start" onSubmit={e => handleSubmit(e)}>
+        <form className="text-start needs-validation" onSubmit={e => handleSubmit(e)}>
             <h1 className="text-center">Update {contact.name} contact</h1>
             <div className="mb-3">
                 <label htmlFor="fullNameInput" className="form-label">Full Name</label>
-                <input type="text" className="form-control" id="fullNameInput" name="fullNameInput"
-                    aria-describedby="emailHelp" placeholder="Full Name" ref={nameRef} defaultValue={contact.name} />
+                <div>
+                    <input type="text" className="form-control" id="fullNameInput" name="fullNameInput" required
+                        aria-describedby="emailHelp" placeholder="Full Name" ref={nameRef} defaultValue={contact.name} />
+                </div>
             </div>
             <div className="mb-3">
                 <label htmlFor="emailInput" className="form-label">Email</label>
-                <input type="email" className="form-control" id="emailInput" name="emailInput"
+                <input type="email" className="form-control" id="emailInput" name="emailInput" required
                     placeholder="Enter email" ref={emailRef} defaultValue={contact.email} />
             </div>
             <div className="mb-3">
                 <label className="form-label" htmlFor="phoneNumberInput">Phone</label>
-                <input type="text" className="form-control" id="phoneNumberInput" name="phoneNumberInput"
+                <input type="text" className="form-control" id="phoneNumberInput" name="phoneNumberInput" required
                     placeholder="Enter phone" ref={phoneRef} defaultValue={contact.phone} />
             </div>
             <div className="mb-3">
                 <label className="form-label" htmlFor="adressInput">Adress</label>
-                <input type="text" className="form-control" id="adressInput" name="adressInput"
+                <input type="text" className="form-control" id="adressInput" name="adressInput" required
                     placeholder="Enter adress" ref={adressRef} defaultValue={contact.address} />
             </div>
             <button type="submit" className="btn btn-primary col-12">Save changes</button>

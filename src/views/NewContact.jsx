@@ -25,27 +25,27 @@ const NewContact = () => {
 
     return (
         <div className="container-fluid d-flex justify-content-center mt-3">
-            <form className="col-12 col-sm-11 col-md-8 col-lg-7 col-xl-6 col-xxl-5" onSubmit={e => handleSubmit(e)}>
+            <form className="col-12 col-sm-11 col-md-8 col-lg-7 col-xl-6 col-xxl-5 needs-validation" onSubmit={e => handleSubmit(e)}>
                 <h1 className="text-center">Add New Contact</h1>
                 <div className="mb-3">
                     <label htmlFor="fullNameInput" className="form-label">Full Name</label>
                     <input type="text" className="form-control" id="fullNameInput" name="fullNameInput"
-                        aria-describedby="emailHelp" placeholder="Full Name" ref={nameRef} />
+                        aria-describedby="emailHelp" placeholder="Full Name" ref={nameRef} required/>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="emailInput" className="form-label">Email</label>
                     <input type="email" className="form-control" id="emailInput" name="emailInput"
-                        placeholder="Enter email" ref={emailRef} />
+                        placeholder="Enter email" ref={emailRef} required/>
                 </div>
                 <div className="mb-3">
                     <label className="form-label" htmlFor="phoneNumberInput">Phone</label>
                     <input type="text" className="form-control" id="phoneNumberInput" name="phoneNumberInput"
-                        placeholder="Enter phone" ref={phoneRef} />
+                        placeholder="Enter phone" ref={phoneRef} required/>
                 </div>
                 <div className="mb-3">
                     <label className="form-label" htmlFor="adressInput">Adress</label>
                     <input type="text" className="form-control" id="adressInput" name="adressInput"
-                        placeholder="Enter adress" ref={adressRef} />
+                        placeholder="Enter adress" ref={adressRef} required/>
                 </div>
                 <button type="submit" className="btn btn-primary col-12">save</button>
                 <Link to='/' className="link-secondary">or get back to contacts</Link>
