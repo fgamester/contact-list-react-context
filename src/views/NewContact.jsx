@@ -48,7 +48,7 @@ const NewContact = () => {
                         placeholder="Enter adress" ref={adressRef} />
                 </div>
                 <button type="submit" className="btn btn-primary col-12">save</button>
-                <Link to='/'>or get back to contacts</Link>
+                <Link to='/' className="link-secondary">or get back to contacts</Link>
             </form>
         </div>
     );
