@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../context/ContactContext.jsx";
 import { Link, useParams } from "react-router-dom";
 import ContactContent from "./CardContent.jsx";
-import profilePicture from '../images/profile-picture.jpg'
 
 
 const ContactCard = () => {
